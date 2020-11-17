@@ -62,6 +62,8 @@ class Debugger(object):
       self.focal_length = 721.5377
       self.W = 1242
       self.H = 375
+    elif dataset == 'tab5k':
+      self.names = tab5k_class_name
     num_classes = len(self.names)
     self.down_ratio=down_ratio
     # for bird view
@@ -455,6 +457,23 @@ coco_class_name = [
      'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase',
      'scissors', 'teddy bear', 'hair drier', 'toothbrush'
 ]
+
+tab5k_class_name = [
+     'Table', 'cell', 'borderless', 'motorcycle', 'airplane',
+     'bus', 'train', 'truck', 'boat', 'traffic light', 'fire hydrant',
+     'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse',
+     'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe', 'backpack',
+     'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee', 'skis',
+     'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove',
+     'skateboard', 'surfboard', 'tennis racket', 'bottle', 'wine glass',
+     'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple', 'sandwich',
+     'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake',
+     'chair', 'couch', 'potted plant', 'bed', 'dining table', 'toilet', 'tv',
+     'laptop', 'mouse', 'remote', 'keyboard', 'cell phone', 'microwave',
+     'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase',
+     'scissors', 'teddy bear', 'hair drier', 'toothbrush'
+]
+
 
 color_list = np.array(
         [
