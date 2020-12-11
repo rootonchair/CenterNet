@@ -62,7 +62,7 @@ class Debugger(object):
       self.focal_length = 721.5377
       self.W = 1242
       self.H = 375
-    elif dataset == 'tab5k':
+    elif dataset == 'tab5k' or dataset == 'tablebank':
       self.names = tab5k_class_name
     num_classes = len(self.names)
     self.down_ratio=down_ratio

@@ -10,20 +10,27 @@ import os
 
 import torch.utils.data as data
 
-class Tab5k(data.Dataset):
+class TableBank(data.Dataset):
   num_classes = 3
-  default_resolution = [1024, 1024]
+  default_resolution = [512, 512]
   mean = np.array([0.40789654, 0.44719302, 0.47026115],
                    dtype=np.float32).reshape(1, 1, 3)
   std  = np.array([0.28863828, 0.27408164, 0.27809835],
                    dtype=np.float32).reshape(1, 1, 3)
 
   def __init__(self, opt, split):
-    super(Tab5k, self).__init__()
-    self.data_dir = os.path.join(opt.data_dir, split)
+    super(TableBank, self).__init__()
+    self.data_dir = opt.data_dir
+    self._split = {
+            "train": "train.json",
+            "val": "val.json",
+            "test": "test.json"
+            }
+
+    ann_filename = self._split[split]
     self.img_dir = os.path.join(self.data_dir, 'images')
     self.annot_path = os.path.join(
-          self.data_dir, '{}.json'.format(split))
+          self.data_dir, "annotations", ann_filename)
     self.max_objs = 128
     self.class_name = [
       '__background__', 'Table', 'cell', 'borderless', 'motorcycle', 'airplane',

@@ -12,6 +12,7 @@ from .dataset.pascal import PascalVOC
 from .dataset.kitti import KITTI
 from .dataset.coco_hp import COCOHP
 from .dataset.tab5k import Tab5k
+from .dataset.tablebank import TableBank
 
 
 dataset_factory = {
@@ -19,7 +20,8 @@ dataset_factory = {
   'pascal': PascalVOC,
   'kitti': KITTI,
   'coco_hp': COCOHP,
-  'tab5k': Tab5k
+  'tab5k': Tab5k,
+  'tablebank': TableBank
 }
 
 _sample_factory = {
